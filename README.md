@@ -1,4 +1,4 @@
-# Social Media
+# Life Financial
 
 ## Table of Contents
   <br />
@@ -23,7 +23,7 @@
 <!-- ABOUT THE PROJECT   -->
 ## About The Project
 
-The Social Media project sets up an initial rails app containing a User, and the ability to write post, like them and have friends
+The Life financial project sets up an initial rails app containing a User, and the ability to write post, like them and have friends
 
 ## Screenshot Test
 #
