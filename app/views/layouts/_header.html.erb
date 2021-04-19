@@ -84,7 +84,8 @@
         </g></g>
       </svg>
     </a>
-      <%= link_to "Sign out", root_path, class: "sidebar-links__anchor" %>
+      <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "sidebar-links__anchor", :data => { :no_turbolink => true } %>
+  
   </div>
 </div>
 </div>

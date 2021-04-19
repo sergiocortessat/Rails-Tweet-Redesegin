@@ -14,6 +14,8 @@
  *= require_self
  */
 
+@import "/bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css?family=Merriweather:400,700");
 
 $dark-blue: #1c2a3d;
 $sky-blue: #54ace3;
@@ -143,3 +145,4 @@ body {
 .alert {
   background-color: #f6cfc6;
 }
+

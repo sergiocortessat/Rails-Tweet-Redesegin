@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  get 'opinions/index'
-  get 'opinions/show'
-  get 'opinions/new'
-  get 'opinions/create'
-  get 'likes/create'
-  get 'comments/new'
-  get 'comments/create'
   root 'users#index'
   devise_for :users
   resources :users
