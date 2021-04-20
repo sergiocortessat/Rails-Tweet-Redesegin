@@ -5,6 +5,7 @@ ruby '2.7.2'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'devise'
+
 gem 'bootstrap'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'

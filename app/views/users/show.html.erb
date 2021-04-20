@@ -1,0 +1,64 @@
+<div class="user-section">
+  <div class="middle-section container">
+   <%= picture_for(@user)%>
+    <div class="new-tweets">
+      <h4>ALL TWEETS</h4>
+      <% @opinions.each  do |opinion| %>
+        <div class="user-det">
+          <div class="user-name">
+            <span><%= opinion.author.fullname %></span>
+            <span><%= opinion.text%></span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="rightbar-user">
+    <div class="user-det">
+      <div class="photo-adduser">
+        <% if !current_user.already_follow?(@user.id) && @user.id!=current_user.id%>
+      <%= link_to follow_user_path(@user.id) do %>
+            <span class="material-icons">add_circle_outline</span>
+          <% end %>
+          <% else %>
+       
+            <span class="material-icons" style="color: #376e9a">add_circle_outline</span>
+        <% end %>
+        <%= avatar_for(@user)%>
+        <span class="material-icons">list</span>
+      </div>
+      <div class="username-name">
+        <span><%= @user.fullname%></span>
+        <span>@<%= @user.username %></span>
+      </div>
+    </div>
+    <div class="tweets-follows">
+      <div class="section">
+        <span><%= @user.opinions.count %></span>
+        <span>Tweets</span>
+      </div>
+      <div class="line"></div>
+      <div class="section">
+        <span><%= @user.followed.count %></span>
+        <span>Following</span>
+      </div>
+      <div class="line"></div>
+      <div class="section">
+        <span><%= @user.followers.count %></span>
+        <span>Followers</span>
+      </div>
+    </div>
+    <div class="followed_by">
+      <span>FOLLOWED BY</span>
+        <% @followers.each do |followers| %>
+          <div class="follower-det">
+            <%= avatar_for(followers.follower)%>
+            <div class="follower-name">
+              <%= link_to followers.follower.fullname, user_path(followers.follower.id) %></a>
+              <a>@<%= followers.follower.username %><a>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>

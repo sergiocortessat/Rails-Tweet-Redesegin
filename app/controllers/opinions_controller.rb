@@ -1,9 +1,10 @@
 class OpinionsController < ApplicationController
+  before_action :authenticate_user!
   def index
-    @opinions = current_user.opinions
     @opinion = Opinion.new
-    @opinions = Opinion.order('DESC')
     @comments = Opinion.new
+    @user = User.all
+    @opinions = Opinion.order('created_at DESC')
   end
 
   def show
@@ -17,7 +18,7 @@ class OpinionsController < ApplicationController
   def create
     @opinion = current_user.opinions.build(opinions_params)
     if @opinion.save
-      redirect_to @opinion
+      redirect_to root_path
     else
       render 'new'
     end
