@@ -1,5 +1,5 @@
 module ApplicationHelper
-    #liked? can be used to differentiate buttons on the view by knowing in wich stage it is
+  # liked? can be used to differentiate buttons on the view by knowing in wich stage it is
   def liked?(subject, type)
     result = false
     if type == 'post'

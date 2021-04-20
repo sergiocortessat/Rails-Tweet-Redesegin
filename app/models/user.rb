@@ -15,22 +15,20 @@ class User < ApplicationRecord
   has_many :followed, foreign_key: 'followerid', class_name: 'Following'
   has_many :followers, foreign_key: 'followedid', class_name: 'Following'
 
-  
-
   def not_following
     User.all.where.not(id: user_followings.select(:id)).where.not(id: id).order(created_at: :desc)
   end
 
   def self.find_friends(id)
     arr = [id]
-    followed = Following.where(Followerid: id).order(created_at: :desc)
+    followed = Following.where(followerid: id).order(created_at: :desc)
 
-    followed.each { |follow| arr.push(follow.Followedid) } if followed.any?
+    followed.each { |follow| arr.push(follow.followedid) } if followed.any?
     User.where.not(id: arr).order(created_at: :desc).limit(5)
   end
 
   def self.user_followers(id, curr_user_id)
-    Following.where(followedid: id).where.not(followerid: curr_user_id).order(created_at: :desc).limit(5)
+    Following.where(followedid: id).where.not(followerid: curr_user_id).order(created_at: :desc).limit(10)
   end
 
   def already_follow?(user_id)
@@ -40,6 +38,4 @@ class User < ApplicationRecord
   def follow_user(user_id)
     @follow = Following.create(followerid: id, followedid: user_id)
   end
-
-
 end

@@ -4,7 +4,7 @@ class LikesController < ApplicationController
   def create
     type = type_subject?(params)[0] # This function gets the type param of the array [1]
     @subject = type_subject?(params)[1] # This function gets the type param of the array [2]
-    notice_type = "like-#{type}"
+
     return unless @subject
 
     if already_liked?(type)
