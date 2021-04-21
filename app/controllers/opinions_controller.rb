@@ -18,7 +18,9 @@ class OpinionsController < ApplicationController
   def create
     @opinion = current_user.opinions.build(opinions_params)
     if @opinion.save
+
       redirect_to root_path
+      flash[:notice] = 'Post created'
     else
       render 'new'
     end

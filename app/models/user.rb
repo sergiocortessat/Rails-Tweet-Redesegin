@@ -12,8 +12,8 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
-  has_many :followed, foreign_key: 'followerid', class_name: 'Following'
-  has_many :followers, foreign_key: 'followedid', class_name: 'Following'
+  has_many :followed, foreign_key: 'followerid', class_name: 'Following', dependent: :destroy
+  has_many :followers, foreign_key: 'followedid', class_name: 'Following', dependent: :destroy
 
   def not_following
     User.all.where.not(id: user_followings.select(:id)).where.not(id: id).order(created_at: :desc)

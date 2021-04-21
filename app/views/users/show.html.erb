@@ -3,7 +3,7 @@
    <%= picture_for(@user)%>
     <div class="new-tweets">
       <h4>ALL TWEETS</h4>
-      <% @opinions.each  do |opinion| %>
+      <% @user.opinions.each  do |opinion| %>
         <div class="user-det">
           <div class="user-name">
             <span><%= opinion.author.fullname %></span>
@@ -21,7 +21,6 @@
             <span class="material-icons">add_circle_outline</span>
           <% end %>
           <% else %>
-       
             <span class="material-icons" style="color: #376e9a">add_circle_outline</span>
         <% end %>
         <%= avatar_for(@user)%>
