@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  validates :username, presence: true, uniqueness: { case_sensitive: false }
+  validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 15 }
+  validates :fullname, presence: true
   mount_uploader :photo, ImageUploader
   mount_uploader :background_image, ImageUploader
   devise :database_authenticatable, :registerable,
@@ -36,6 +37,6 @@ class User < ApplicationRecord
   end
 
   def follow_user(user_id)
-    @follow = Following.create(followerid: id, followedid: user_id)
+    Following.create(followerid: id, followedid: user_id)
   end
 end

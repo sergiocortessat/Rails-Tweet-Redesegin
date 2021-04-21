@@ -53,7 +53,7 @@
           <div class="follower-det">
             <%= avatar_for(followers.follower)%>
             <div class="follower-name">
-              <%= link_to followers.follower.fullname, user_path(followers.follower.id) %></a>
+              <%= link_to followers.follower.fullname, user_path(followers.follower.id), id: "link" %></a>
               <a>@<%= followers.follower.username %><a>
             </div>
           </div>

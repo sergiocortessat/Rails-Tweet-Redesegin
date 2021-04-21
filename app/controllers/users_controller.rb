@@ -1,9 +1,4 @@
 class UsersController < ApplicationController
-  def index
-    @users = User.all
-    @friends = current_user.followers
-  end
-
   def show
     @user = User.find(params[:id])
     @opinions = Opinion.order('created_at DESC')
