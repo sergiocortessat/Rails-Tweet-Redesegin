@@ -8,28 +8,50 @@
 * [Contributing](#contributing)
 * [Contact](#authors)
 * [Acknowledgements](#acknowledgements) 
+* [Getting Started](#getting-started) 
+* [Live Demo and Video](#live-demo) 
 
 #
 <br />
 
-[![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://forthebadge.com) </br>
-![rails](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
+![Ruby](https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white)
+![Rails](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+![Postgresql](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
 <br />
 
-#
+### Built With
+
+* [RUBY]
+* [RAILS]
+* [DEVISE]
+* [RSPEC&CAPIBARA]
+* [BOOTSTRAP]
+* [CLOUDINARY]
+* [POSTGRESQL]
 
 
 <!-- ABOUT THE PROJECT   -->
 ## About The Project
 
-The Life financial project sets up an initial rails app containing a User, and the ability to write post, like them and have friends
+The Life financial project sets up an that allows you too share your opinions related to financial, stock, crypto or life wealth hacks that you have used in the past. As well we welcome all sort of insights, opinions, Forecast or interpretations of current stocks, crypto and financial market
 
 ## Screenshot Test
 #
 <p align="center">
   <img height="auto" src="Screenshot.png">
 </p>
+
+<p align="center">
+  <img height="auto" src="Screenshot.png">
+</p>
+
+## Live Demo
+
+- [Live Demo Link]()
+
+- [Video]()
 
 ## Contributing
 
@@ -48,9 +70,8 @@ Terminal or similar to execute the program.
 ## Clone project
 
 - To get a local copy up and running follow these simple example steps.
-- Clone this repository with git clone ```https://github.com/sergiocortessat/ror-social-scaffold/tree/feature1``` using your terminal or command line.
-- Change to the project directory by entering: ```cd ror-social-scaffold ``` in the terminal.
-
+- Clone this repository with git clone `````` using your terminal or command line.
+- Change to the project directory by entering: `````` in the terminal.
 
 ## How to use the Private-Event app
 1. run the command ```bundle install```   This will install the required dependencies
@@ -59,9 +80,21 @@ Terminal or similar to execute the program.
 4. run the command ```rails db:migrate``` 
 5. run the command ```rails server```
 
+## Command line steps
+```
+- $ git clone `$ git clone https://github.com/sergiocortessat/Rails-Tweet-Redesegin`
+- $ git checkout develop
+- Run `cd Rails-Tweet-Redesegin`
+- $ bundle 
+- $ rails webpacker:install 
+- $ rails db:create
+- $ rails db:migrate
+- $ rails server
+```
 
 ## Testing
 In this project, the testing was done using RSpec to test logic specs.
+
 ## Install
 - In a terminal window type gem install RSpec
 - Once RSpec install has finished, type RSpec --init
@@ -69,16 +102,19 @@ In this project, the testing was done using RSpec to test logic specs.
 - Inside spec folder, you'll see a spec_helper.rb file.
 
 ## Run
-The testing file is included in spec folder under logicrspec.rb.
-- go to the folder spec: cd spec
-- Inside your terminal type you can type: Rspec spec/*
+The testing fileS ARE included in spec folderers.
+- Inside your terminal type you can type: rspec spec/*
 - Rspec spec/* to run all test in your spec folder
  
-- All test pass
+- All test should pass
 
+## Command line Rspec steps
+```
+- $ gem install rspec
+- $ rspec spec/*
+- $ 24 examples, 0 failures
 
-## Run
-
+```
 
 ## Authors
 
@@ -88,25 +124,13 @@ The testing file is included in spec folder under logicrspec.rb.
 - Twitter: [@sergiocortessat](https://twitter.com/sergiocortessat)
 - LinkedIn: [@sergiocortessat](www.linkedin.com/in/sergio-cortes-satizabal-3b452194)
 
-👤 
-
-- Github: [@nganifaith](https://github.com/nganifaith)
-- Twitter: [@nganifaith](https://twitter.com/Bright_Ngani)
-- LinkedIn: [@nganifaith](https://www.linkedin.com/in/ngani-faith/)
-
-
-
-### Built With
-
-* [RUBY]
-* [RAILS]
-* [DEVISE]
-* [RSPEC&CAPIBARA]
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
 * [Microverse](https://www.microverse.org/)
+* Design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
+
 
 ## 📝 License
 

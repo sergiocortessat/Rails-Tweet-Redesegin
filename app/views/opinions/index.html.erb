@@ -15,24 +15,36 @@
         <div class="user-opinions">
           <div class="user-details">
             <h5><%= link_to opinions.author.username, user_path(opinions.author.id) %></h5>
-            <span><%= opinions.text %></span>
+            <span><%= opinions.text %></span><br/>
+            <div>
+            <span><%= opinions.likes.count %></span>
+            <span> LIKE
+              <%= link_to opinion_likes_path(opinions), class: "text-light", method: :post do %>
+              <% if liked?(opinions, 'opinion') %>
+                <button class="btn btn-liked"><span><i class="fa fa-thumbs-up"></span></i></button>
+              <% else %>
+                <button class="btn btn-neutral"><span><i class="fa fa-thumbs-up"></i></span></button>
+              <% end %>
+              <%end%>
+          </span>
           </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
-  <div class="rightbar-home">
-    <h4>WHO TO FOLLOW</h4>
-    <% @user.each do |f| %>
-      <div class="user-section">
-        <div class="user-photo">
-          <%= avatar_for(f) %>
-        </div>
-        <div class="user-details">
-          <%= link_to f.username, user_path(f.id) %>
-          <%= f.fullname %>
         </div>
       </div>
     <% end %>
   </div>
+</div>
+<div class="rightbar-home">
+  <h4>WHO TO FOLLOW</h4>
+  <% @user.each do |f| %>
+    <div class="user-section">
+      <div class="user-photo">
+        <%= avatar_for(f) %>
+      </div>
+      <div class="user-details">
+        <%= link_to f.username, user_path(f.id) %>
+        <%= f.fullname %>
+      </div>
+    </div>
+  <% end %>
+</div>
 </div>

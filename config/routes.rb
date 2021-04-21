@@ -9,7 +9,6 @@ Rails.application.routes.draw do
 
 
   resources :opinions do
-    resources :comments
     resources :likes
   end
 
