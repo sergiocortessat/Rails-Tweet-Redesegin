@@ -4,6 +4,8 @@ class OpinionsController < ApplicationController
     @opinion = Opinion.new
     @user = User.where.not(id: current_user.id).ordered_by_most_recent
     @opinions = Opinion.ordered_by_most_recent
+    @followers_count = User.user_followers_count(params[:id], current_user.id)
+    @followed_count = User.user_followed_count(params[:id], current_user.id)
   end
 
   def new
