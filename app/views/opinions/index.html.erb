@@ -25,17 +25,18 @@
         </div>
       <%end%>
     </div>
-    <div class="rightbar-home">
-      <h4>WHO TO FOLLOW</h4>
-      <% @user.each do |f| %>
-        <div class="user-section">
-          <div class="user-photo">
-            <%= avatar_for(f) %>
-          </div>
-          <div class="user-details">
-            <%= link_to f.username, user_path(f.id) %>
-            <%= f.fullname %>
-          </div>
+  </div>
+  <div class="rightbar-home">
+    <h4>WHO TO FOLLOW</h4>
+    <% @user.each do |f| %>
+      <div class="user-section">
+        <div class="user-photo">
+          <%= avatar_for(f) %>
         </div>
-      <% end %>
-    </div>
+        <div class="user-details">
+          <%= link_to f.username, user_path(f.id) %>
+          <%= f.fullname %>
+        </div>
+      </div>
+    <% end %>
+  </div>

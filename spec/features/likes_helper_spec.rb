@@ -13,7 +13,7 @@ feature 'User likes an opinion' do
     visit root_path
     fill_in 'text', with: 'Testing post'
     click_button 'Tweet'
-    page.find('#like').click
+    page.first('#like').click
     expect(page).to have_text('You liked this Opinion')
   end
 
@@ -25,8 +25,8 @@ feature 'User likes an opinion' do
     visit root_path
     fill_in 'text', with: 'Testing post'
     click_button 'Tweet'
-    page.find('#like').click
-    page.find('#like').click
+    page.first('#like').click
+    page.first('#like').click
     expect(page).to have_text('You have Disliked the opinion')
   end
 end
