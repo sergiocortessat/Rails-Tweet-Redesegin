@@ -5,5 +5,4 @@ class Following < ApplicationRecord
   def self.find_friend_to_unfollow(sender_id, receiver_id)
     @following = Following.where(followerid: sender_id, followedid: receiver_id)
   end
-
 end

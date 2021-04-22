@@ -3,11 +3,14 @@
     <%= picture_for(@user)%>
     <div class="new-tweets">
       <h4>ALL TWEETS</h4>
-      <% @user.opinions.each  do |opinion| %>
-        <div class="user-det">
-          <div class="user-name">
-            <span><%= opinion.author.fullname %></span>
-            <span><%= opinion.text%></span>
+
+      <% @user.opinions.each do |opinion|%>
+        <div class="card" style="width: 100%";>
+          <div class="card-body">
+            <h5 class="card-title"><%= opinion.author.username %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%=opinion.author.fullname%></h6>
+            <p class="card-text"><%= opinion.text %></p>
+            <p class = "all-opinions-counter text-dark">This opinion has <%= opinion.likes.count %> likes</a>
           </div>
         </div>
       <% end %>

@@ -33,5 +33,4 @@ class UsersController < ApplicationController
     redirect_to user_path(params[:id])
     flash[:notice] = "You are now following #{user.fullname} / @#{user.username}"
   end
-
 end

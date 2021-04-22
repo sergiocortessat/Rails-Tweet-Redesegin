@@ -5,6 +5,6 @@ RSpec.describe Like, type: :model do
     it { should belong_to(:user) }
   end
   describe 'associations' do
-    it { should belong_to(:opinion)}
+    it { should belong_to(:opinion) }
   end
 end
