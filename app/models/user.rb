@@ -33,11 +33,11 @@ class User < ApplicationRecord
   end
 
   def self.user_followers_count(id, curr_user_id)
-    Following.where(followedid: id).where.not(followerid: curr_user_id).count
+    @following = Following.where(followedid: id).where.not(followerid: curr_user_id).count
   end
 
   def self.user_followed_count(id, curr_user_id)
-    Following.where(followerid: id).where.not(followedid: curr_user_id).count
+    @following = Following.where(followerid: id).where.not(followedid: curr_user_id).count
   end
 
   def already_follow?(user_id)
