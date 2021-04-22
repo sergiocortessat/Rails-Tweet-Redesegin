@@ -14,6 +14,7 @@ class User < ApplicationRecord
 
   has_many :followed, foreign_key: 'followerid', class_name: 'Following', dependent: :destroy
   has_many :followers, foreign_key: 'followedid', class_name: 'Following', dependent: :destroy
+  scope :ordered_by_most_recent, -> { order(created_at: :desc) }
 
   def not_following
     User.all.where.not(id: user_followings.select(:id)).where.not(id: id).order(created_at: :desc)
@@ -29,6 +30,14 @@ class User < ApplicationRecord
 
   def self.user_followers(id, curr_user_id)
     Following.where(followedid: id).where.not(followerid: curr_user_id).order(created_at: :desc).limit(10)
+  end
+
+  def self.user_followers_count(id, curr_user_id)
+    Following.where(followedid: id).where.not(followerid: curr_user_id).count
+  end
+
+  def self.user_followed_count(id, curr_user_id)
+    Following.where(followerid: id).where.not(followedid: curr_user_id).count
   end
 
   def already_follow?(user_id)

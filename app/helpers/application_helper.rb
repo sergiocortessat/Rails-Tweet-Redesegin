@@ -12,4 +12,20 @@ module ApplicationHelper
     end
     result
   end
+
+  def notice?
+    return unless notice.present?
+
+    content_tag(:div, class: 'notice notifications') do
+      content_tag(:p, notice)
+    end
+  end
+
+  def alert?
+    return unless alert.present?
+
+    content_tag(:div, class: 'notice notifications') do
+      content_tag(:p, alert)
+    end
+  end
 end

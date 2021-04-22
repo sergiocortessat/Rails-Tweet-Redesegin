@@ -19,7 +19,7 @@
             <div class = "mt-2">
             <span class ="mb-2">This opinion has <%= opinions.likes.count %> like</span><br/>
             <span>
-              <%= link_to opinion_likes_path(opinions), class: "text-light", method: :post do %>
+              <%= link_to opinion_likes_path(opinions), class: "text-light", method: :post, id: "like" do %>
               <% if liked?(opinions, 'opinion') %>
                 <p><span class="text-dark mt-2 mb-2">Unlike</span></p>
               <% else %>

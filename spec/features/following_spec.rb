@@ -16,7 +16,7 @@ RSpec.describe 'the following process', type: :system do
     fill_in 'user[email]', with: user1.email
     fill_in 'user[password]', with: user1.password
     click_button 'Log in'
-    visit users_path(user2.id)
+    visit user2.id
     expect(page).to_not have_link(href: '/follow_user/1')
   end
 end

@@ -1,6 +1,6 @@
 <div class="user-section">
   <div class="middle-section container">
-   <%= picture_for(@user)%>
+    <%= picture_for(@user)%>
     <div class="new-tweets">
       <h4>ALL TWEETS</h4>
       <% @user.opinions.each  do |opinion| %>
@@ -16,13 +16,7 @@
   <div class="rightbar-user">
     <div class="user-det">
       <div class="photo-adduser">
-        <% if !current_user.already_follow?(@user.id) && @user.id!=current_user.id%>
-      <%= link_to follow_user_path(@user.id) do %>
-            <span class="material-icons">add_circle_outline</span>
-          <% end %>
-          <% else %>
-            <span class="material-icons" style="color: #376e9a">add_circle_outline</span>
-        <% end %>
+        <%= user_follow_enabled?%>
         <%= avatar_for(@user)%>
         <span class="material-icons">list</span>
       </div>
@@ -33,31 +27,31 @@
     </div>
     <div class="tweets-follows">
       <div class="section">
-        <span><%= @user.opinions.count %></span>
-        <span>Tweets</span>
+        <span><%= @opinions_count %></span>
+        <span>Opinion</span>
       </div>
       <div class="line"></div>
       <div class="section">
-        <span><%= @user.followed.count %></span>
+        <span><%= @followed_count %></span>
         <span>Following</span>
       </div>
       <div class="line"></div>
       <div class="section">
-        <span><%= @user.followers.count %></span>
+        <span><%= @followers_count %></span>
         <span>Followers</span>
       </div>
     </div>
     <div class="followed_by">
       <span>FOLLOWED BY</span>
-        <% @followers.each do |followers| %>
-          <div class="follower-det">
-            <%= avatar_for(followers.follower)%>
-            <div class="follower-name">
-              <%= link_to followers.follower.fullname, user_path(followers.follower.id), id: "link" %></a>
-              <a>@<%= followers.follower.username %><a>
+      <% @user_followings.each do |user| %>
+        <div class="follower-det">
+          <%= avatar_for(user.follower)%>
+          <div class="follower-name">
+            <%= link_to user.follower.fullname, user_path(user.follower.id), id: "link" %></a>
+          <a>@<%= user.follower.username %><a>
             </div>
           </div>
         <% end %>
+      </div>
     </div>
   </div>
-</div>
