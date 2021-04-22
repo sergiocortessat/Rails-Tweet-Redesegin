@@ -38,18 +38,30 @@
 The Life financial project sets up an that allows you too share your opinions related to financial, stock, crypto or life wealth hacks that you have used in the past. As well we welcome all sort of insights, opinions, Forecast or interpretations of current stocks, crypto and financial market
 
 ## Screenshot Test
-#
+## Log In
 <p align="center">
-  <img height="auto" src="Screenshot.png">
+  <img height="auto" src="app/assets/images/Screenshot3.png">
 </p>
 
+## Index page
+
 <p align="center">
-  <img height="auto" src="Screenshot.png">
+  <img height="auto" src="app/assets/images/Screenshot.png">
+</p>
+
+## User page
+<p align="center">
+  <img height="auto" src="app/assets/images/Screenshot2.png">
+</p>
+
+## Edit User
+<p align="center">
+  <img height="auto" src="app/assets/images/Screenshot4.png">
 </p>
 
 ## Live Demo
 
-- [Live Demo Link]()
+- [Live Demo Link](https://pacific-sierra-18862.herokuapp.com/)
 
 - [Video]()
 
@@ -70,8 +82,8 @@ Terminal or similar to execute the program.
 ## Clone project
 
 - To get a local copy up and running follow these simple example steps.
-- Clone this repository with git clone `````` using your terminal or command line.
-- Change to the project directory by entering: `````` in the terminal.
+- Clone this repository with git clone ```https://github.com/sergiocortessat/Rails-Tweet-Redesegin/pull/2``` using your terminal or command line.
+- Change to the project directory by entering: ```cd Rails-Tweet-Redesegin``` in the terminal.
 
 ## How to use the Private-Event app
 1. run the command ```bundle install```   This will install the required dependencies
@@ -82,7 +94,7 @@ Terminal or similar to execute the program.
 
 ## Command line steps
 ```
-- $ git clone `$ git clone https://github.com/sergiocortessat/Rails-Tweet-Redesegin`
+- $ git clone `$ git clone https://github.com/sergiocortessat/Rails-Tweet-Redesegin/pull/2`
 - $ git checkout develop
 - Run `cd Rails-Tweet-Redesegin`
 - $ bundle 
@@ -112,7 +124,7 @@ The testing fileS ARE included in spec folderers.
 ```
 - $ gem install rspec
 - $ rspec spec/*
-- $ 24 examples, 0 failures
+- $ 29 examples, 0 failures
 
 ```
 
