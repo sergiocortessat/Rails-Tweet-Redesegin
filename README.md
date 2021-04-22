@@ -46,7 +46,7 @@ The Life financial project sets up an that allows you too share your opinions re
 ## Index page
 
 <p align="center">
-  <img height="auto" src="app/assets/images/Screenshot.png">
+  <img height="auto" src="app/assets/images/Screenshot5.png">
 </p>
 
 ## User page
@@ -56,14 +56,14 @@ The Life financial project sets up an that allows you too share your opinions re
 
 ## Edit User
 <p align="center">
-  <img height="auto" src="app/assets/images/Screenshot4.png">
+  <img height="auto" src="app/assets/images/Screenshot6.png">
 </p>
 
 ## Live Demo
 
 - [Live Demo Link](https://pacific-sierra-18862.herokuapp.com/)
 
-- [Video]()
+- [Video](https://www.loom.com/share/abe221e6021749389f1944b3a400eedf)
 
 ## Contributing
 
