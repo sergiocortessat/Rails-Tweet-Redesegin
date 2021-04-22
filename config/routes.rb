@@ -1,19 +1,19 @@
 Rails.application.routes.draw do
-  root 'users#index'
+  root 'opinions#index'
   devise_for :users
-  resources :users
-
-
-
-
-  resources :opinions do
-      resources :likes
+  resources :users, only: [:show, :index] do
+    member do
+      get '/follow_user/:id', to: 'users#follow_user', as: :follow
+    end
   end
-  resources :comments do
-    resources :likes
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+      resources :followings do
+member do
+        get '/destroy_user/:id', to: 'followings#destroy_user', as: :destroy
 end
-  
-post 'opinions/index', to: 'comments#create'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+end
+
+  resources :opinions, only: [:index, :create, :new, :destroy] do
+    resources :likes, only: [:create]
+  end
+
 end

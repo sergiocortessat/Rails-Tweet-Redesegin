@@ -10,7 +10,7 @@ AllCops:
   DisplayCopNames: true
 
 Layout/LineLength:
-  Max: 140
+  Max: 225
 Metrics/MethodLength:
   Include:
     - "app/controllers/*"
@@ -58,5 +58,7 @@ Style/HashTransformKeys:
 Style/HashTransformValues:
   Enabled: false
 Style/IdenticalConditionalBranches:
+  Enabled: false
+Lint/UselessAssignment:
   Enabled: false
   

@@ -5,6 +5,7 @@ ruby '2.7.2'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'devise'
+
 gem 'bootstrap'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
@@ -52,13 +53,11 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara'
-  gem 'database_cleaner'
-  gem 'selenium-webdriver'
-  # Easy installation and use of web drivers to run system tests with browsers
   gem 'database_cleaner'
   gem 'rspec'
+  gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 4.0'
+  # Easy installation and use of web drivers to run system tests with browsers
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end

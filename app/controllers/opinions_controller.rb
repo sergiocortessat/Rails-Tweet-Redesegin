@@ -1,13 +1,9 @@
 class OpinionsController < ApplicationController
+  before_action :authenticate_user!
   def index
-    @opinions = current_user.opinions
     @opinion = Opinion.new
-    @opinions = Opinion.order('DESC')
-    @comments = Opinion.new
-  end
-
-  def show
-    @opinion = Opinion.find(params[:id])
+    @user = User.where.not(id: current_user.id).ordered_by_most_recent
+    @opinions = Opinion.ordered_by_most_recent
   end
 
   def new
@@ -17,7 +13,9 @@ class OpinionsController < ApplicationController
   def create
     @opinion = current_user.opinions.build(opinions_params)
     if @opinion.save
-      redirect_to @opinion
+
+      redirect_to root_path
+      flash[:notice] = 'Post created'
     else
       render 'new'
     end

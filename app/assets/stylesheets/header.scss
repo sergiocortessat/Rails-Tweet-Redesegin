@@ -1,20 +1,19 @@
-.nav-links {
-  display: flex;
-  justify-content: flex-end;
-  padding: 10px 30px 0 0;
+.special-button {
+  background-color: transparent;
+  border: none;
+  color: #62778a;
+}
 
-  ul {
-    width: 140px;
-    display: flex;
-    justify-content: space-between;
-    list-style-type: none;
+.rounded-circle-special {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  background-color: #78b5e5;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 30px;
+}
 
-    li {
-      a {
-        text-decoration: none;
-        color: #2ca7e0;
-        font-family: Proxima-Bold, sans-serif;
-      }
-    }
-  }
+.main-logo {
+  width: 73px !important;
 }
