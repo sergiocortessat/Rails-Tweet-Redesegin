@@ -12,29 +12,35 @@
     <div class="new-tweets">
       <h4> NEW OPINIONS</h4>
       <% @opinions.each do |opinions|%>
-        <div class="card" style="width: 100%";>
+        <div class="card">
           <div class="card-body">
             <h5 class="card-title"><%= link_to opinions.author.username, user_path(opinions.author.id) %></h5>
             <h6 class="card-subtitle mb-2 text-muted"><%=opinions.author.fullname%></h6>
             <p class="card-text"><%= opinions.text %></p>
             <p class = "all-opinions-counter text-dark">This opinion has <%= opinions.likes.count %> likes</a>
-             <%= dynamic_like(opinions, "opinion")%>
+            <%= link_to opinion_likes_path(opinions), class: "text-light card-link", method: :post, id: "like" do %>
+              <% if liked?(opinions, 'opinion') %>
+                <button class="btn btn-neutral"><span class="text-dark mt-2 mb-2"><strong>Unlike</strong></span></button>
+              <% else %>
+                <button class="btn btn-neutral"><span><i class="fa fa-thumbs-up"></i></span></button>
+              <% end %>
+            <%end%>
           </div>
         </div>
       <% end %>
     </div>
-    <div class="rightbar-home">
-      <h4>WHO TO FOLLOW</h4>
-      <% @user.each do |f| %>
-        <div class="user-section">
-          <div class="user-photo">
-            <%= avatar_for(f) %>
-          </div>
-          <div class="user-details">
-            <%= link_to f.username, user_path(f.id) %>
-            <%= f.fullname %>
-          </div>
+  </div>
+  <div class="rightbar-home">
+    <h4>WHO TO FOLLOW</h4>
+    <% @user.each do |f| %>
+      <div class="user-section">
+        <div class="user-photo">
+          <%= avatar_for(f) %>
         </div>
-      <% end %>
-    </div>
+        <div class="user-details">
+          <%= link_to f.username, user_path(f.id) %>
+          <%= f.fullname %>
+        </div>
+      </div>
+    <% end %>
   </div>
