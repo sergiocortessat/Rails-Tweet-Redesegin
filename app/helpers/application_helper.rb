@@ -29,9 +29,13 @@ module ApplicationHelper
     end
   end
 
+  def different_user(subject)
+    Like.where(user_id: current_user.id, opinion_id: subject.id).exists?
+  end
+
   def dynamic_like(subject, type)
     link_to opinion_likes_path(subject), class: 'text-light card-link', method: :post, id: 'like' do
-      if liked?(subject, type)
+      if liked?(subject, type) && different_user(subject)
         content_tag :button, class: 'btn btn-neutral' do
           content_tag :span, class: 'text-dark mt-2 mb-2' do
             content_tag :strong do
