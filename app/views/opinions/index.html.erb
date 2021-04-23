@@ -18,9 +18,7 @@
             <h6 class="card-subtitle mb-2 text-muted"><%=opinions.author.fullname%></h6>
             <p class="card-text"><%= opinions.text %></p>
             <p class = "all-opinions-counter text-dark">This opinion has <%= opinions.likes.count %> likes</a>
-            <%= link_to opinion_likes_path(opinions), class: "text-light card-link", method: :post, id: "like" do %>
-              <%dynamic_like(opinions, "opinion")%>
-            <%end%>
+              <%= dynamic_like(opinions, "opinion")%>
           </div>
         </div>
       <%end%>
