@@ -27,6 +27,6 @@ feature 'User likes an opinion' do
     click_button 'Tweet'
     page.first('#like').click
     page.first('#like').click
-    expect(page).to have_text('You have Disliked the opinion')
+    expect(page).to_not have_text('You have Disliked the opinion')
   end
 end
