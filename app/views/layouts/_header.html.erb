@@ -7,12 +7,12 @@
     </div>
     <div class="profile-follows">
         <div class="follows">
-            <h4><%= current_user.followed.count %></h4>
+            <h4><%= @followers_count %></h4>
             <p>Following</p>
         </div>
         <div class="divisor"></div>
         <div class="follows">
-            <h4><%= current_user.followers.count %></h4>
+            <h4><%= @followed_count %></h4>
             <p>Followers</p>
         </div>
     </div>

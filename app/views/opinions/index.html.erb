@@ -29,6 +29,7 @@
   <div class="rightbar-home">
     <h4>WHO TO FOLLOW</h4>
     <% @user.each do |f| %>
+    <%if current_user != f && !current_user.already_follow?(f) %>
       <div class="user-section">
         <div class="user-photo">
           <%= avatar_for(f) %>
@@ -38,5 +39,6 @@
           <%= f.fullname %>
         </div>
       </div>
+      <%end%>
     <% end %>
   </div>

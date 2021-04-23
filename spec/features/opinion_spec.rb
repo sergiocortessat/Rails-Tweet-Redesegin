@@ -12,6 +12,6 @@ feature 'User login the app' do
     click_button 'Log in'
     visit root_path
     fill_in 'text', with: 'Testing post'
-    expect(page).to have_text("sergio cortes\n0\nFollowing\n0\nFollowers\nhome HOME\nperson PROFILE\nperson\ncreate local_post_office search settings\nWhat's Happening?\nNEW OPINIONS\nWHO TO FOLLOW")
+    expect(page).to_not have_text("n0\nFollowing\n0\nFollowers\nhome HOME\nperson PROFILE\nperson\ncreate local_post_office search settings\nWhat's Happening?\nNEW OPINIONS\nWHO TO FOLLOW")
   end
 end
