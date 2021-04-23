@@ -36,7 +36,7 @@ module ApplicationHelper
   def dynamic_like(subject, type)
     if liked?(subject, type)
       content_tag :p, id: 'like' do
-        'You licked this comment'
+        'You liked this comment'
       end
     else
       button_to opinion_likes_path(subject), class: 'text-light card-link', method: :post, id: 'like' do
