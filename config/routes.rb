@@ -13,7 +13,7 @@ end
 end
 
   resources :opinions, only: [:index, :create, :new, :destroy] do
-    resources :likes, only: [:create]
+    resources :likes, only: [:create, :destroy]
   end
 
 end
