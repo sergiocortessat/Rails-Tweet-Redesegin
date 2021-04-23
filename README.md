@@ -35,7 +35,7 @@
 <!-- ABOUT THE PROJECT   -->
 ## About The Project
 
-The Life financial project sets up an that allows you too share your opinions related to financial, stock, crypto or life wealth hacks that you have used in the past. As well we welcome all sort of insights, opinions, Forecast or interpretations of current stocks, crypto and financial market
+The Life financial project sets up an that allows you to share your opinions related to financial, stock, crypto, or life wealth hacks that you have used in the past. As well we welcome all sort of insights, opinions, Forecast or interpretations of current stocks, crypto, and financial market
 
 ## Screenshot Test
 ## Log In
@@ -72,7 +72,7 @@ Contributions make the open-source community such an amazing place to learn, ins
 ## Prequisites
 
 Ruby & Rails installed on your local machine.
-bundle installed on your machine
+Bundle installed on your machine
 Terminal or similar to execute the program.
 
 
@@ -87,7 +87,7 @@ Terminal or similar to execute the program.
 
 ## How to use the Private-Event app
 1. run the command ```bundle install```   This will install the required dependencies
-2. run the command ```rails webpacker:install ``` This will install the webpack to avoid specific rails 6 problems
+2. run the command ```rails webpacker:install ``` This will install the webpack to avoid specific rails => 6 problems
 3. run the command ```rails db:create``` This will initialize the necessary migration files
 4. run the command ```rails db:migrate``` 
 5. run the command ```rails server```
@@ -96,7 +96,7 @@ Terminal or similar to execute the program.
 ```
 - $ git clone `$ git clone https://github.com/sergiocortessat/Rails-Tweet-Redesegin/pull/2`
 - $ git checkout develop
-- Run `cd Rails-Tweet-Redesegin`
+- $ cd Rails-Tweet-Redesegin`
 - $ bundle 
 - $ rails webpacker:install 
 - $ rails db:create
@@ -114,9 +114,9 @@ In this project, the testing was done using RSpec to test logic specs.
 - Inside spec folder, you'll see a spec_helper.rb file.
 
 ## Run
-The testing fileS ARE included in spec folderers.
-- Inside your terminal type you can type: rspec spec/*
-- Rspec spec/* to run all test in your spec folder
+The testing files are included in spec folders.
+- Inside your terminal type: rspec spec/*
+- Type rspec spec/* to run all tests
  
 - All test should pass
 
@@ -127,6 +127,10 @@ The testing fileS ARE included in spec folderers.
 - $ 29 examples, 0 failures
 
 ```
+
+<p align="center">
+  <img height="auto" src="app/assets/images/rspec.png">
+</p>
 
 ## Authors
 
