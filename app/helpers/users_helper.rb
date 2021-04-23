@@ -26,4 +26,14 @@ module UsersHelper
       end
     end
   end
+
+  def user_follow_button?
+    link_to follow_user_path(@user.id) do
+      content_tag :span, class: 'material-icons' do
+        content_tag :i, class: 'material-icons material-icons-special' do
+          'add_circle_outline'
+        end
+      end
+    end
+  end
 end

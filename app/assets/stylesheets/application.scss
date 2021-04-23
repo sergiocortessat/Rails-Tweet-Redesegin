@@ -286,6 +286,7 @@ body {
           display: flex;
           flex-direction: column;
           color: $font-color;
+          margin-right: 20px;
 
           h5 {
             margin-top: 0;
@@ -429,12 +430,15 @@ body {
 
 .user-section {
   display: flex;
+  justify-content: right;
+  align-items: center;
 
   .user-details {
     display: flex;
     flex-direction: column;
     padding-left: 20px;
     color: $font-color;
+    font-size: 1rem;
 
     a:hover {
       cursor: pointer;

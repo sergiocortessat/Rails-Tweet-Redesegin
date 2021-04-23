@@ -11,7 +11,7 @@
     </div>
     <div class="new-tweets">
       <h4> NEW OPINIONS</h4>
-      <% @opinions.each do |opinions|%>
+      <% Opinion.newsfeed_opinions.each do |opinions|%>
         <div class="card">
           <div class="card-body">
             <h5 class="card-title"><%= link_to opinions.author.username, user_path(opinions.author.id) %></h5>
@@ -28,17 +28,9 @@
   </div>
   <div class="rightbar-home">
     <h4>WHO TO FOLLOW</h4>
-    <% @user.each do |f| %>
-    <%if current_user != f && !current_user.already_follow?(f) %>
-      <div class="user-section">
-        <div class="user-photo">
-          <%= avatar_for(f) %>
-        </div>
-        <div class="user-details">
-          <%= link_to f.username, user_path(f.id) %>
-          <%= f.fullname %>
-        </div>
-      </div>
-      <%end%>
-    <% end %>
-  </div>
+    <% current_user.not_following.each do |f| %>
+     <%= who_to_follow(f)%>
+      <% end %>
+    </div>
+
+  

@@ -22,6 +22,6 @@ RSpec.describe Following, type: :model do
     it { should belong_to(:follower) }
   end
   describe 'associations' do
-    it { should belong_to(:followed) }
+    it { should belong_to(:following) }
   end
 end

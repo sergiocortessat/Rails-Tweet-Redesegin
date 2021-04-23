@@ -52,4 +52,8 @@ module ApplicationHelper
       end
     end
   end
+
+  def who_to_follow(following)
+    render 'opinions/following', f: following if current_user != following && !current_user.already_follow?(following)
+  end
 end

@@ -8,36 +8,22 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :opinions, foreign_key: 'author_id', dependent: :destroy
+  has_many :opinions, foreign_key: 'author_id'
 
   has_many :likes, dependent: :destroy
 
-  has_many :followed, foreign_key: 'followerid', class_name: 'Following', dependent: :destroy
-  has_many :followers, foreign_key: 'followedid', class_name: 'Following', dependent: :destroy
-  scope :ordered_by_most_recent, -> { order(created_at: :desc) }
+  has_many :followers, foreign_key: :followerid, class_name: 'Following'
+  has_many :user_followers, through: :followers, source: :follower
+
+  has_many :followings, foreign_key: :followedid, class_name: 'Following'
+  has_many :user_followings, through: :followings, source: :following
 
   def not_following
     User.all.where.not(id: user_followings.select(:id)).where.not(id: id).order(created_at: :desc)
   end
 
-  def self.find_friends(id)
-    arr = [id]
-    followed = Following.where(followerid: id).order(created_at: :desc)
-
-    followed.each { |follow| arr.push(follow.followedid) } if followed.any?
-    User.where.not(id: arr).order(created_at: :desc).limit(5)
-  end
-
-  def self.user_followers(id, curr_user_id)
-    Following.where(followedid: id).where.not(followerid: curr_user_id).order(created_at: :desc).limit(10)
-  end
-
-  def self.user_followers_count(id, curr_user_id)
-    Following.where(followedid: id).where.not(followerid: curr_user_id).count
-  end
-
-  def self.user_followed_count(id, curr_user_id)
-    Following.where(followerid: id).where.not(followedid: curr_user_id).count
+  def self.followers(id, curr_user_id)
+    Following.where(followedid: id).where.not(followerid: curr_user_id).order(created_at: :desc).limit(5)
   end
 
   def already_follow?(user_id)
@@ -45,6 +31,11 @@ class User < ApplicationRecord
   end
 
   def follow_user(user_id)
-    Following.create(followerid: id, followedid: user_id)
+    @follow = Following.create(followerid: id, followedid: user_id)
+    @user = User.find(user_id)
+    @user.count_following += 1
+    self.count_followers += 1
+    @user.save
+    save
   end
 end
