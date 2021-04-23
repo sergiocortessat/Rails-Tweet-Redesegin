@@ -4,7 +4,7 @@
     <div class="new-tweets">
       <h4>ALL TWEETS</h4>
 
-      <% @user.opinions.each do |opinion|%>
+      <% @user.opinions.ordered_by_most_recent.all.each do |opinion|%>
         <div class="card" style="width: 100%";>
           <div class="card-body">
             <h5 class="card-title"><%= opinion.author.username %></h5>
@@ -30,31 +30,31 @@
     </div>
     <div class="tweets-follows">
       <div class="section">
-        <span><%= @opinions_count %></span>
+        <span><%= @user.opinion_count %></span>
         <span>Opinion</span>
       </div>
       <div class="line"></div>
       <div class="section">
-        <span><%= @followed_count %></span>
-        <span>Following</span>
+        <span><%= @user.count_following %></span>
+        <span>Followers</span>
       </div>
       <div class="line"></div>
       <div class="section">
-        <span><%= @followers_count %></span>
-        <span>Followers</span>
+        <span><%= @user.count_followers %></span>
+        <span>Following</span>
       </div>
     </div>
     <div class="followed_by">
       <span>FOLLOWED BY</span>
-      <% @user_followings.each do |user| %>
+      <% @followers.each do |user| %>
         <div class="follower-det">
-          <%= avatar_for(user.follower)%>
+          <%= avatar_for(user.follower)%> 
           <div class="follower-name">
             <%= link_to user.follower.fullname, user_path(user.follower.id), id: "link" %></a>
-          <a>@<%= user.follower.username %><a>
+          <a>@<%= user.follower.fullname %><a>
             </div>
           </div>
-        <% end %>
+        <%end%>
       </div>
     </div>
   </div>

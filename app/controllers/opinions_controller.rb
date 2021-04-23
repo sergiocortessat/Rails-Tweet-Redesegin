@@ -2,8 +2,7 @@ class OpinionsController < ApplicationController
   before_action :authenticate_user!
   def index
     @opinion = Opinion.new
-    @user = User.where.not(id: current_user.id).ordered_by_most_recent
-    @opinions = Opinion.ordered_by_most_recent
+    @current = current_user.not_following
   end
 
   def new
@@ -11,14 +10,21 @@ class OpinionsController < ApplicationController
   end
 
   def create
-    @opinion = current_user.opinions.build(opinions_params)
-    if @opinion.save
+    @opinion = Opinion.new(opinions_params)
+    @opinion.author_id = current_user.id
 
+    if @opinion.save
+      current_user.opinion_count += 1
+      current_user.save
       redirect_to root_path
-      flash[:notice] = 'Post created'
     else
-      render 'new'
+      flash[:alert] = 'Please fill some characters'
+      redirect_back(fallback_location: root_path)
     end
+  end
+
+  def show
+    @opinion = Opinion.find(params[:id])
   end
 
   def destroy; end
