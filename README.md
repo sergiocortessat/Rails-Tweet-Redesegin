@@ -82,7 +82,7 @@ Terminal or similar to execute the program.
 ## Clone project
 
 - To get a local copy up and running follow these simple example steps.
-- Clone this repository with git clone ```https://github.com/sergiocortessat/Rails-Tweet-Redesegin/pull/2``` using your terminal or command line.
+- Clone this repository with git clone ```https://github.com/sergiocortessat/Rails-Tweet-Redesegin/tree/milestone_1``` using your terminal or command line.
 - Change to the project directory by entering: ```cd Rails-Tweet-Redesegin``` in the terminal.
 
 ## How to use the Private-Event app
