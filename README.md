@@ -46,12 +46,12 @@ The Life financial project sets up an that allows you to share your opinions rel
 ## Index page
 
 <p align="center">
-  <img height="auto" src="app/assets/images/Screenshot5.png">
+  <img height="auto" src="app/assets/images/Screenshot9.png">
 </p>
 
 ## User page
 <p align="center">
-  <img height="auto" src="app/assets/images/Screenshot2.png">
+  <img height="auto" src="app/assets/images/Screenshot10.png">
 </p>
 
 ## Edit User
