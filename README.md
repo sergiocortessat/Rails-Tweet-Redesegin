@@ -63,7 +63,7 @@ The Life financial project sets up an that allows you to share your opinions rel
 
 - [Live Demo Link](https://still-taiga-45359.herokuapp.com/users/sign_in)
 
-- [Video](https://www.loom.com/share/abe221e6021749389f1944b3a400eedf)
+- [Video](https://www.loom.com/share/4e6d18b212854d00bf9221ba3b7a9704)
 
 ## Contributing
 
