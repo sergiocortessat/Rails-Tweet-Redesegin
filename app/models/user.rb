@@ -17,6 +17,7 @@ class User < ApplicationRecord
 
   has_many :followings, foreign_key: :followedid, class_name: 'Following'
   has_many :user_followings, through: :followings, source: :following
+  scope :all_tweet, -> { includes(:user_followers, :user_followings, :opinions) }
 
   def not_following
     User.all.where.not(id: user_followings.select(:id)).where.not(id: id).order(created_at: :desc)

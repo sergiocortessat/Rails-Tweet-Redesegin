@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @user = User.includes(:user_followers).includes(:user_followings).includes(:opinions).find(params[:id])
+    @user = User.find(params[:id])
     @followers = User.followers(params[:id], current_user.id)
   end
 
