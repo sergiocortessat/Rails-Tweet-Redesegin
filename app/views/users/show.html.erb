@@ -11,6 +11,7 @@
             <h6 class="card-subtitle mb-2 text-muted"><%=opinion.author.fullname%></h6>
             <p class="card-text"><%= opinion.text %></p>
             <p class = "all-opinions-counter text-dark">This opinion has <%= opinion.likes.count %> likes</a>
+                <p class = "all-opinions-counter text-dark">Created at : <%= opinion.created_at.to_date %></a>
           </div>
         </div>
       <% end %>
